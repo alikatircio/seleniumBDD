@@ -13,7 +13,7 @@ public class AddCustomerPage {
 
     public WebDriver webDriver;
 
-    public AddCustomerPage (WebDriver driver) {
+    public AddCustomerPage(WebDriver driver) {
 
         webDriver = driver;
         PageFactory.initElements(driver, this);
@@ -22,7 +22,7 @@ public class AddCustomerPage {
     By linkCustomersMenu = By.xpath("//li[contains(@class, 'treeview')]//span[text()='Customers' and not(@class)]");
     By getLinkCustomersMenuItem = By.xpath("//li[contains(@class, 'treeview')]//span[text()='Customers' and @class]");
     By btnAddNew = By.xpath("//a[contains(@class, 'bg-blue')]");
-    @FindBy (id = "Email")
+    @FindBy(id = "Email")
     @CacheLookup
     WebElement txtEmail;
     By txtPassword = By.id("Password");
@@ -38,7 +38,7 @@ public class AddCustomerPage {
     By listItemGuests = By.xpath("//li[contains(text(), 'Guests')]");
     By listItemVendors = By.xpath("//li[contains(text(), 'Vendors')]");
     By managerOfVendor = By.id("VendorId");
-    By txtAdminContext =  By.id("AdminComment");
+    By txtAdminContext = By.id("AdminComment");
     By btnSave = By.name("save");
 
     //Actions Methods
@@ -53,37 +53,37 @@ public class AddCustomerPage {
         webDriver.findElement(linkCustomersMenu).click();
     }
 
-    public void clickOnCustomersMenuItem () {
+    public void clickOnCustomersMenuItem() {
 
         webDriver.findElement(getLinkCustomersMenuItem).click();
     }
 
-    public void clickOnAddNew () {
+    public void clickOnAddNew() {
 
         webDriver.findElement(btnAddNew).click();
     }
 
-    public void setTxtEmail (String email) {
+    public void setTxtEmail(String email) {
 
         txtEmail.sendKeys(email);
     }
 
-    public void setTxtPassword (String password) {
+    public void setTxtPassword(String password) {
 
         webDriver.findElement(txtPassword).sendKeys(password);
     }
 
-    public void setTxtName (String name) {
+    public void setTxtName(String name) {
 
         webDriver.findElement(txtName).sendKeys(name);
     }
 
-    public void setTxtSurname (String surname) {
+    public void setTxtSurname(String surname) {
 
         webDriver.findElement(txtSurname).sendKeys(surname);
     }
 
-    public void setTxtCustomerRole (String role) throws InterruptedException {
+    public void setTxtCustomerRole(String role) throws InterruptedException {
 
         if (!role.equals("Registered")) {
             webDriver.findElement(By.xpath("//span[@class='k-icon k-delete']")).click();
@@ -104,17 +104,17 @@ public class AddCustomerPage {
 
         listItem.click();
 
-        JavascriptExecutor js =  (JavascriptExecutor)webDriver;
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("arguments[0].click;", listItem);
     }
 
-    public void setManagerOfVendor (String value){
+    public void setManagerOfVendor(String value) {
 
         Select drp = new Select(webDriver.findElement(managerOfVendor));
         drp.selectByVisibleText(value);
     }
 
-    public void setGender (String gender) {
+    public void setGender(String gender) {
 
         if (gender.equalsIgnoreCase("male"))
             webDriver.findElement(genderMale).click();
@@ -124,22 +124,22 @@ public class AddCustomerPage {
             webDriver.findElement(genderMale).click();
     }
 
-    public void setBirthdate (String birthdate) {
+    public void setBirthdate(String birthdate) {
 
         webDriver.findElement(txtBirthdate).sendKeys(birthdate);
     }
 
-    public void setTxtCompanyName (String companyName) {
+    public void setTxtCompanyName(String companyName) {
 
         webDriver.findElement(txtCompanyName).sendKeys(companyName);
     }
 
-    public void setTxtAdminContext (String context) {
+    public void setTxtAdminContext(String context) {
 
         webDriver.findElement(txtAdminContext).sendKeys(context);
     }
 
-    public void clickOnSaveButton () {
+    public void clickOnSaveButton() {
 
         webDriver.findElement(btnSave).click();
     }

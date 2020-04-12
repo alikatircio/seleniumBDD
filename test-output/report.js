@@ -9,6 +9,9 @@ formatter.background({
   "description": "",
   "keyword": "Background"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "user launch chrome browser",
   "keyword": "Given "
@@ -62,7 +65,12 @@ formatter.result({
 formatter.scenario({
   "name": "Add New Customer",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@sanity"
+    }
+  ]
 });
 formatter.step({
   "name": "user click on customers menu",
@@ -149,6 +157,9 @@ formatter.background({
   "description": "",
   "keyword": "Background"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "user launch chrome browser",
   "keyword": "Given "
@@ -202,7 +213,12 @@ formatter.result({
 formatter.scenario({
   "name": "Search Customer by EMailId",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@regression"
+    }
+  ]
 });
 formatter.step({
   "name": "user click on customers menu",
@@ -269,6 +285,9 @@ formatter.background({
   "description": "",
   "keyword": "Background"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "user launch chrome browser",
   "keyword": "Given "
@@ -322,7 +341,12 @@ formatter.result({
 formatter.scenario({
   "name": "Search Customer by Name",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@regression"
+    }
+  ]
 });
 formatter.step({
   "name": "user click on customers menu",
@@ -403,7 +427,15 @@ formatter.feature({
 formatter.scenario({
   "name": "Successful login with valid credentials",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@sanity"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
   "name": "user launch chrome browser",
@@ -488,7 +520,27 @@ formatter.result({
 formatter.scenarioOutline({
   "name": "Login Data Driven",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@regression"
+    },
+    {
+      "name": "#tekli"
+    },
+    {
+      "name": "koşumlar"
+    },
+    {
+      "name": "için"
+    },
+    {
+      "name": "tag"
+    },
+    {
+      "name": "kullanılabilir."
+    }
+  ]
 });
 formatter.step({
   "name": "user launch chrome browser",
@@ -550,7 +602,30 @@ formatter.examples({
 formatter.scenario({
   "name": "Login Data Driven",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@regression"
+    },
+    {
+      "name": "#tekli"
+    },
+    {
+      "name": "koşumlar"
+    },
+    {
+      "name": "için"
+    },
+    {
+      "name": "tag"
+    },
+    {
+      "name": "kullanılabilir."
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
   "name": "user launch chrome browser",
@@ -635,7 +710,30 @@ formatter.result({
 formatter.scenario({
   "name": "Login Data Driven",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@regression"
+    },
+    {
+      "name": "#tekli"
+    },
+    {
+      "name": "koşumlar"
+    },
+    {
+      "name": "için"
+    },
+    {
+      "name": "tag"
+    },
+    {
+      "name": "kullanılabilir."
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
   "name": "user launch chrome browser",
@@ -685,8 +783,7 @@ formatter.match({
   "location": "stepDefinition.Steps.page_Title_should_be(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat stepDefinition.Steps.page_Title_should_be(Steps.java:50)\n\tat ✽.Page Title should be \"Dashboard / nopCommerce administration\"(file:///home/ali/IdeaProjects/SeleniumCucumber/Features/Login.feature:17)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "User click on Log out link",
@@ -696,7 +793,8 @@ formatter.match({
   "location": "stepDefinition.Steps.user_click_on_Log_out_link()"
 });
 formatter.result({
-  "status": "skipped"
+  "error_message": "org.openqa.selenium.NoSuchSessionException: invalid session id\n  (Driver info: chromedriver\u003d73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform\u003dLinux 5.3.0-45-generic x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027ali\u0027, ip: \u0027127.0.1.1\u0027, os.name: \u0027Linux\u0027, os.arch: \u0027amd64\u0027, os.version: \u00275.3.0-45-generic\u0027, java.version: \u00271.8.0_201\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: /tmp/.com.google.Chrome.igosCU}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:46197}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}\nSession ID: 6df02503019a491763d4fa8ec675dc09\n*** Element info: {Using\u003dlink text, value\u003dLogout}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)\n\tat org.openqa.selenium.By$ByLinkText.findElement(By.java:220)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\n\tat pageObjects.LoginPage.clickLogout(LoginPage.java:54)\n\tat stepDefinition.Steps.user_click_on_Log_out_link(Steps.java:102)\n\tat ✽.User click on Log out link(file:///home/ali/IdeaProjects/SeleniumCucumber/Features/Login.feature:21)\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "Page Title should be \"Your store. Login\"",

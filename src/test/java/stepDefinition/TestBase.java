@@ -1,13 +1,13 @@
 package stepDefinition;
 
 import org.apache.commons.lang.RandomStringUtils;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pageObjects.AddCustomerPage;
 import pageObjects.LoginPage;
 import pageObjects.SearchCustomerPage;
 
-
+import java.util.Properties;
 
 
 public class TestBase {
@@ -16,7 +16,8 @@ public class TestBase {
     public LoginPage lp;
     public AddCustomerPage addCustomerPage;
     public SearchCustomerPage searchCustomerPage;
-    public Logger logger;
+    public static Logger logger;
+    public Properties config;
 
     //Created for generating random string dor unique string
     public static String randomString () {
